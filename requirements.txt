@@ -1,0 +1,34 @@
+# 商品流行性预测系统 — 依赖
+# 安装: pip install -r requirements.txt
+# 建议 Python 3.10.13
+
+# ---- 数据处理 (F1) ----
+pandas>=2.0
+numpy>=1.24
+pyarrow>=12.0          # parquet 读写
+
+# ---- 协同过滤 / 评估 (F2) ----
+scikit-learn>=1.3      # 相似度、矩阵分解、Precision@K 等
+
+# ---- 深度学习 LSTM (F3/F4) ----
+torch>=2.0             # CPU 版即可，无需 GPU
+
+# ---- 可视化前端 (F7) ----
+streamlit>=1.55
+streamlit-echarts[pyecharts]>=0.7.0
+
+# ---- 数据库存储（消费记录 / 库存 / 权限）----
+SQLAlchemy>=2.0        # ORM/连接引擎，pandas read_sql/to_sql 直接使用
+PyMySQL>=1.1           # MySQL 驱动（纯 Python，免编译）
+cryptography>=41.0     # MySQL 8 caching_sha2_password 认证所需
+
+# ---- AI 智能客服 ----
+flask>=3.0
+flask-cors>=4.0
+requests>=2.31
+
+# ---- 工具 ----
+tqdm>=4.65
+
+# ---- 可选：协同过滤也可用 Surprise（Windows 安装需 C 编译器，较麻烦，非必须）----
+# scikit-surprise>=1.1

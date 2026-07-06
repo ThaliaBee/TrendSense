@@ -1,0 +1,8 @@
+{
+  "method": "hybrid-0.3/0.7-cf",
+  "hit_rate@10": 0.9114,
+  "precision@10": 0.3678,
+  "recall@10": 0.2023,
+  "baseline_hit_rate@10": 0.9881,
+  "test_users": 2099
+}
