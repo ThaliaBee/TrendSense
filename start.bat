@@ -13,15 +13,15 @@ echo.
 
 set "PROJ_DIR=%~dp0"
 
-:: ── 首次运行检查：缓存文件是否就绪 ──
+:: -- First-run check: cache files ready? --
 if not exist "%PROJ_DIR%data\clean_transactions.parquet" (
-    echo [WARN] 数据文件缺失，请先运行数据准备脚本:
+    echo [WARN] Cached data not found. Run these first:
     echo        python modules/preprocess.py
     echo        python modules/lstm_popularity.py
     echo        python modules/cf.py
     echo        python modules/inventory.py
     echo.
-    choice /c yn /m "是否继续启动？(可能报错)"
+    choice /c yn /m "Continue anyway? (may crash)"
     if errorlevel 2 exit /b
 )
 
